@@ -1,4 +1,4 @@
-# Saucedemo website automated test
+# Automation Exercise website automated test
 > Automated tests trained on www.automationexercise.com website
 
 ## Table of Contents

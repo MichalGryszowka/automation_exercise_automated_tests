@@ -37,15 +37,10 @@ def test_case_1_register_user(get_main_page):
     signup_page.select_dropdown(locators.Signup.month_locator, User.month)
     sleep(1)
     signup_page.select_dropdown(locators.Signup.year_locator, User.year)
-    sleep(1)
-    signup_page.remove_advert_bar()
 
 
-
-
-
-
-
+    # sleep(1)
+    # signup_page.remove_advert_bar()
     # signup_page.get_element(locators.Signup.newsletter_locator).click()
     # sleep(1)
     # signup_page.get_element(locators.Signup.special_offer_locator).click()
