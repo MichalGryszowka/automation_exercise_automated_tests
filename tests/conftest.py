@@ -11,7 +11,7 @@ from pages.main_page import MainPage
 @fixture
 def init_driver():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
+    driver.set_window_size(1000,1200)
     yield driver
     driver.close()
 

@@ -43,7 +43,5 @@ class BasePage:
         drop.select_by_value(value)
 
     def remove_advert_bar(self):
-        WebDriverWait(self.driver, 5).until(EC.frame_to_be_available_and_switch_to_it((
-            By. XPATH, '/html/body/ins[2]/div[2]')))
-        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((
-            By.XPATH, '/html/body/ins[2]/div[1]//ins/span/svg/path'))).click()
+        WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable((
+            By.ID, 'ins > span > svg > path'))).click()
