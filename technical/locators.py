@@ -5,7 +5,10 @@ class Main:
     main_slider_locator = (By.ID, "slider")
     login_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[4]')
     logged_on_user = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[10]/a/b')
-    delete_account = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[5]/a')
+    delete_account = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[5]/a/i')
+    main_page_box = (By.XPATH, '/html/body/header/div/div/div/div[1]/div/a/img')
+    account_deleted = (By.XPATH, '/html/body/section/div/div/div/h2/b')
+    continue_button = (By.ID, 'btn btn-primary')
 
 
 class Login:

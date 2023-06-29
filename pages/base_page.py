@@ -1,8 +1,5 @@
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
@@ -27,6 +24,10 @@ class BasePage:
         text = self.driver.find_element(*locator)
         return text.get_attribute('innerText')
 
+    def switch_to_default_and_refresh(self):
+        self.driver.switch_to.default_content()
+        self.driver.refresh()
+
     def get_url(self):
         return self.driver.current_url
 
@@ -42,6 +43,7 @@ class BasePage:
         drop = Select(elem)
         drop.select_by_value(value)
 
-    def remove_advert_bar(self):
-        WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable((
-            By.ID, 'ins > span > svg > path'))).click()
+    def remove_advert_frame(self):
+        self.driver.switch_to.frame(self.driver.find_element(By.TAG_NAME, 'iframe'))
+        self.driver.switch_to.default_content()
+

@@ -1,6 +1,4 @@
-
 from pages.account_created_page import AccountCreatedPage
-from pages.delete_account_page import DeleteAccountPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.signup_page import SignupPage
@@ -63,19 +61,20 @@ def test_case_1_register_user(get_main_page):
 
     signup_page.fill_in_data(locators.Signup.mobile_number_locator, User.mobile)
 
-    signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
+    account_created_page = signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
 
-    # Verify 'Account created!' is visible
-    assert signup_page.check_el_visibility(locators.AccountCreated.account_created_locator) is True
+    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
-    signup_page.click_button(locators.AccountCreated.continue_locator, MainPage)
+    account_created_page.switch_to_default_and_refresh()
+
+    main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
-    assert signup_page.get_text(locators.Main.logged_on_user) == User.name
+    assert main_page.get_text(locators.Main.logged_on_user) == User.name
 
-    signup_page.click_button(locators.Main.delete_account, DeleteAccountPage)
+    main_page.click_button(locators.Main.delete_account, MainPage)
 
-    # Verify 'Account deleted' is visible
-    assert signup_page.check_el_visibility(locators.DeleteAccount.account_deleted_locator) is True
+    # Verify 'Account Deleted' is visible
+    assert main_page.get_text(locators.Main.account_deleted) == 'ACCOUNT DELETED!'
 
-    signup_page.click_button(locators.DeleteAccount.continue_button_locator, MainPage)
+    main_page.click_button(locators.Main.account_deleted, MainPage)

@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class User:
     name: str = 'Jan'
     surname: str = 'Kowalski'
-    email: str = 'dziwnyemail8@gmail.com'
+    email: str = 'mytestemail9@gmail.com'
     password: str = 'haslo'
     day: str = '1'
     month: str = '6'
