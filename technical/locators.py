@@ -13,10 +13,14 @@ class Main:
 
 class Login:
 
+    existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
+    existing_password = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[3]')
     add_locator = (By.XPATH, '/html/body/ins[2]/div[1]//ins/span/svg/path')
+    login_to_your_account = (By.XPATH, '/html/body/section/div/div/div[1]/div/h2')
     new_user_signup_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/h2')
     new_user_name_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/input[2]')
     new_user_email_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/input[3]')
+    login_button_locator = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/button')
     signup_button_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/button')
     password_locator = (By.ID, 'password')
 
@@ -54,3 +58,4 @@ class AccountCreated:
 class DeleteAccount:
     account_deleted_locator = (By.XPATH, '/html/body/section/div/div/div/h2/b')
     continue_button_locator = (By.XPATH, '/html/body/section/div/div/div/div/a')
+

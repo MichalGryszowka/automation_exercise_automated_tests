@@ -1,4 +1,5 @@
 from pages.account_created_page import AccountCreatedPage
+from pages.delete_account_page import DeleteAccountPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.signup_page import SignupPage
@@ -63,6 +64,8 @@ def test_case_1_register_user(get_main_page):
 
     account_created_page = signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
 
+    assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
+
     account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     account_created_page.switch_to_default_and_refresh()
@@ -70,11 +73,12 @@ def test_case_1_register_user(get_main_page):
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
-    assert main_page.get_text(locators.Main.logged_on_user) == User.name
 
-    main_page.click_button(locators.Main.delete_account, MainPage)
+    assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
+
+    delete_account = main_page.click_button(locators.Main.delete_account, DeleteAccountPage)
 
     # Verify 'Account Deleted' is visible
-    assert main_page.get_text(locators.Main.account_deleted) == 'ACCOUNT DELETED!'
+    assert delete_account.get_text(locators.Main.account_deleted) == 'Account Deleted!'
 
-    main_page.click_button(locators.Main.account_deleted, MainPage)
+    delete_account.click_button(locators.Main.account_deleted, MainPage)

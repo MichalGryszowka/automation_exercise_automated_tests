@@ -3,9 +3,10 @@ from dataclasses import dataclass
 
 @dataclass
 class User:
-    name: str = 'Jan'
+    name: str = 'Tomasz'
     surname: str = 'Kowalski'
-    email: str = 'mytestemail9@gmail.com'
+    email: str = 'mytestemail44@gmail.com'
+    correct_email: str = 'mytestemail1@gmail.com'
     password: str = 'haslo'
     day: str = '1'
     month: str = '6'
@@ -16,13 +17,3 @@ class User:
     country: str = 'United States'
     zipcode: str = '31404'
     mobile: str = '507689301'
-
-
-
-
-
-
-
-# @dataclass
-# class Password:
-#     pwd: str = "secret_sauce"
