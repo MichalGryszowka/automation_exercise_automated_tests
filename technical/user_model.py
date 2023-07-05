@@ -5,8 +5,8 @@ from dataclasses import dataclass
 class User:
     name: str = 'Tomasz'
     surname: str = 'Kowalski'
-    email: str = 'mytestemail44@gmail.com'
-    correct_email: str = 'mytestemail1@gmail.com'
+    email: str = 'mytestemail10@gmail.com'
+    correct_email: str = 'mytestemail11@gmail.com'
     password: str = 'haslo'
     day: str = '1'
     month: str = '6'

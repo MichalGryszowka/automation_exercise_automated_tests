@@ -66,14 +66,13 @@ def test_case_1_register_user(get_main_page):
 
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
 
-    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
+    main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
-    account_created_page.switch_to_default_and_refresh()
+    main_page.switch_to_default_and_refresh()
 
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
-
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
 
     delete_account = main_page.click_button(locators.Main.delete_account, DeleteAccountPage)
