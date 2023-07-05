@@ -23,6 +23,7 @@ class Login:
     login_button_locator = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/button')
     signup_button_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/button')
     password_locator = (By.ID, 'password')
+    email_incorrect_locator = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/p')
 
 
 class Signup:

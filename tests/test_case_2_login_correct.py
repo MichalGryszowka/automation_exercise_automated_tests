@@ -16,7 +16,7 @@ def test_case_2_login_correct(get_main_page):
 
     login_page = main_page.click_button(locators.Main.login_locator, LoginPage)
 
-    # Verify 'New User Signup!' is visible
+    # Verify 'Login to your account' is visible
     assert login_page.get_text(locators.Login.login_to_your_account) == 'Login to your account'
 
     login_page.fill_in_data(locators.Login.new_user_name_locator, User.name)
