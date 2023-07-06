@@ -6,6 +6,7 @@ class User:
     name: str = 'Tomasz'
     surname: str = 'Kowalski'
     email: str = 'mytestemail10@gmail.com'
+    existing_email:  str = 'existingemail@gmail.com'
     password: str = 'haslo'
     day: str = '1'
     month: str = '6'

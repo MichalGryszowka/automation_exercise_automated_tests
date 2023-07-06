@@ -9,6 +9,7 @@ class Main:
     main_page_box = (By.XPATH, '/html/body/header/div/div/div/div[1]/div/a/img')
     account_deleted = (By.XPATH, '/html/body/section/div/div/div/h2/b')
     continue_button = (By.ID, 'btn btn-primary')
+    logout_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[4]/a')
 
 
 class Login:
