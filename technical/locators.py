@@ -25,7 +25,7 @@ class Login:
     signup_button_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/button')
     password_locator = (By.ID, 'password')
     email_incorrect_locator = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/p')
-
+    email_already_exist = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/p')
 
 class Signup:
     enter_account_info_locator = (By.XPATH, '/html/body/section/div/div/div/div/h2/b')
@@ -50,6 +50,7 @@ class Signup:
     zipcode_locator = (By.ID, 'zipcode')
     mobile_number_locator = (By.ID, 'mobile_number')
     create_account_button = (By.XPATH, '/html/body/section/div/div/div/div/form/button')
+
 
 
 class AccountCreated:
