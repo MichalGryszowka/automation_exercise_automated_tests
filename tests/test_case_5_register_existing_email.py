@@ -3,7 +3,7 @@ from technical import locators
 from technical.user_model import User
 
 
-def test_case_5_logout_user(get_main_page):
+def test_case_5_register_existing_email(get_main_page):
 
     main_page = get_main_page
 

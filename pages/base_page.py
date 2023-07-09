@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
     def __init__(self, driver, url: str):
@@ -42,6 +44,28 @@ class BasePage:
         elem = self.driver.find_element(*locator)
         drop = Select(elem)
         drop.select_by_value(value)
+
+    def upload_file(self, locator: tuple[By, str], path: str):
+        self.driver.find_element(*locator).send_keys(path)
+
+    def click_element(self, locator: tuple[By, str]):
+        self.driver.find_element(*locator).click()
+
+    def accept_alert(self):
+        alert = self.driver.switch_to.alert
+        alert.accept()
+
+
+        #
+        #
+        # actions = ActionChains(self.driver)
+        # self.driver.switch_to.active_element.actions.send_keys(Keys.ENTER)
+        # actions.perform()
+        #
+
+
+
+
 
 
 

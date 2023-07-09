@@ -17,3 +17,7 @@ class User:
     country: str = 'United States'
     zipcode: str = '31404'
     mobile: str = '507689301'
+    subject: str = 'technical error'
+    message: str = '''I can't add one of the product to the basket'''
+    screenshot_path: str = 'C:/Users/HP/PycharmProjects/AutomationExercise/files/error_screenshot.png'
+
