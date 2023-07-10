@@ -1,8 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
+
 
 class BasePage:
     def __init__(self, driver, url: str):
@@ -31,7 +29,7 @@ class BasePage:
         self.driver.refresh()
 
     def get_url(self):
-        return self.driver.current_url
+        return str(self.driver.current_url)
 
     def click_button(self, locator: tuple[By, str], page):
         self.driver.find_element(*locator).click()
@@ -56,12 +54,6 @@ class BasePage:
         alert.accept()
 
 
-        #
-        #
-        # actions = ActionChains(self.driver)
-        # self.driver.switch_to.active_element.actions.send_keys(Keys.ENTER)
-        # actions.perform()
-        #
 
 
 

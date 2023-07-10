@@ -11,7 +11,7 @@ class Main:
     continue_button = (By.ID, 'btn btn-primary')
     logout_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[4]/a')
     contact_us_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[8]/a')
-
+    test_case_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[5]/a')
 
 class Login:
     existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
@@ -75,3 +75,6 @@ class ContactUs:
     home_button_locator = (By.XPATH, '/html/body/div[1]/div[2]/div[1]/div/div[3]/a/span')
     submit_button = (By.XPATH, '/html/body/div[1]/div[2]/div[1]/div/div[3]/form/div[6]/input')
     detail_submitted = (By.XPATH, '/html/body/div[1]/div[2]/div[1]/div/div[2]')
+
+
+
