@@ -5,7 +5,7 @@ from pages.main_page import MainPage
 from pages.signup_page import SignupPage
 from technical import locators
 from technical.user_model import User
-from time import sleep
+
 
 def test_case_1_register_user(get_main_page):
 
@@ -65,6 +65,10 @@ def test_case_1_register_user(get_main_page):
     account_created_page = signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
 
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
+
+    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
+
+    account_created_page.switch_to_default_and_refresh()
 
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 

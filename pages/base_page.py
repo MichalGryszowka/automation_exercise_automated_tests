@@ -24,6 +24,10 @@ class BasePage:
         text = self.driver.find_element(*locator)
         return text.get_attribute('innerHTML')
 
+    def get_text_2(self, locator: tuple[By, str]):
+        text = self.driver.find_element(*locator)
+        return text.get_attribute('innerText')
+
     def switch_to_default_and_refresh(self):
         self.driver.switch_to.default_content()
         self.driver.refresh()
@@ -53,8 +57,8 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.accept()
 
-
-
+    def check_is_displayed(self, locator: tuple[By, str]):
+        return self.driver.find_element(*locator).is_displayed()
 
 
 

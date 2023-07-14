@@ -1,4 +1,4 @@
-from pages.contact_us import ContactUsPage
+from pages.contact_us_page import ContactUsPage
 from technical import locators
 from technical.user_model import User
 

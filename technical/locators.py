@@ -77,4 +77,13 @@ class ContactUs:
     detail_submitted = (By.XPATH, '/html/body/div[1]/div[2]/div[1]/div/div[2]')
 
 
-
+class Products:
+    product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
+    product_list_locator = (By.CLASS_NAME, 'brands-name')
+    product_details_1_view_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a')
+    product_details_1_name_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2')
+    product_details_1_category_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[1]')
+    product_details_1_price_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/span')
+    product_details_1_availab_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]')
+    product_details_1_condition_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]')
+    product_details_1_brand_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]')
