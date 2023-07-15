@@ -57,9 +57,6 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.accept()
 
-    def check_is_displayed(self, locator: tuple[By, str]):
-        return self.driver.find_element(*locator).is_displayed()
-
 
 
 

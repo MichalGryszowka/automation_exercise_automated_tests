@@ -13,6 +13,7 @@ class Main:
     contact_us_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[8]/a')
     test_case_button = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[5]/a')
 
+
 class Login:
     existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
     existing_password = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[3]')
@@ -87,3 +88,7 @@ class Products:
     product_details_1_availab_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[2]')
     product_details_1_condition_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[3]')
     product_details_1_brand_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]')
+    search_product_locator = (By.ID, 'search_product')
+    loop_locator = (By.XPATH, '/html/body/section[1]/div/button/i')
+    searched_products_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/h2')
+    searched_blue_top = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p')
