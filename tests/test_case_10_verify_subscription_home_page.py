@@ -4,7 +4,7 @@ from technical import locators
 from technical.user_model import User
 
 
-def test_case_10_verify_subscription(get_main_page):
+def test_case_10_verify_subscription_home_page(get_main_page):
 
     main_page = get_main_page
 

@@ -16,6 +16,7 @@ class Main:
     subscription_mail_locator = (By.ID, 'susbscribe_email')
     subscription_button_locator = (By.XPATH, '//*[@id="subscribe"]/i')
     subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
+    cart_button_locator = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a')
 
 
 class Login:
@@ -96,4 +97,11 @@ class Products:
     loop_locator = (By.XPATH, '/html/body/section[1]/div/button/i')
     searched_products_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/h2')
     searched_blue_top = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p')
+
+
+class ViewCart:
+    subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
+    subscription_mail_locator = (By.ID, 'susbscribe_email')
+    subscription_button_locator = (By.XPATH, '//*[@id="subscribe"]')
+    subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
 
