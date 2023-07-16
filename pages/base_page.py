@@ -57,6 +57,14 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.accept()
 
+    def scroll_page_down(self):
+        self.driver.execute_script("window.scrollBy(0,8500)","")
+
+
+
+
+
+
 
 
 

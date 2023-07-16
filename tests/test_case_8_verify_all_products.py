@@ -20,7 +20,7 @@ def test_case_8_verify_all_products(get_main_page):
     assert products_page.get_url() == 'https://automationexercise.com/products'
 
     # Verify the products list is visible
-    assert products_page.check_is_displayed(locators.Products.product_list_locator) is True
+    assert products_page.check_el_visibility(locators.Products.product_list_locator) is True
 
     product_details_1_page = products_page.click_button(locators.Products.product_details_1_view_locator,
                                                         ProductsDetails1Page)
