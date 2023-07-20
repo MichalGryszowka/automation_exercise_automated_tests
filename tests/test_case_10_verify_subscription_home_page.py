@@ -11,7 +11,7 @@ def test_case_10_verify_subscription_home_page(get_main_page):
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
 
-    main_page.scroll_page_down()
+    main_page.scroll_page_down(8500)
 
     # Verify text 'SUBSCRIPTION'
     assert main_page.get_text_2(locators.Main.subscription_locator) == "SUBSCRIPTION"

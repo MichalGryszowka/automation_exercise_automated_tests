@@ -17,6 +17,7 @@ class Main:
     subscription_button_locator = (By.XPATH, '//*[@id="subscribe"]/i')
     subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
     cart_button_locator = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a')
+    product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
 
 
 class Login:
@@ -84,7 +85,6 @@ class ContactUs:
 
 
 class Products:
-    product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
     product_list_locator = (By.CLASS_NAME, 'brands-name')
     product_details_1_view_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a')
     product_details_1_name_locator = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2')
@@ -97,6 +97,18 @@ class Products:
     loop_locator = (By.XPATH, '/html/body/section[1]/div/button/i')
     searched_products_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/h2')
     searched_blue_top = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p')
+    hover_first_product_locator = (By.XPATH, '/html/body/section[2]/div[1]/div/div[2]/div/div[2]/div/div[1]')
+    add_to_cart_first_product = (By.XPATH, '/html/body/section[2]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[2]/div/a')
+    continue_shopping_button_locator = (By.CSS_SELECTOR, "#cartModal > div > div > div.modal-footer > button")
+    hover_second_product_locator = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[3]/div/div[1]/div[1]')
+    add_to_cart_second_product = (By.XPATH, '/html/body/section[2]/div/div/div[2]/div/div[3]/div/div[1]/div[2]/div/a')
+    view_cart_locator = (By. CSS_SELECTOR, '#cartModal > div > div > div.modal-body > p:nth-child(2) > a > u')
+    unit_price_first_product = (By.XPATH, '//*[@id="product-1"]/td[3]/p')
+    qty_first_product = (By.XPATH, '//*[@id="product-1"]/td[4]/button')
+    total_price_first_product = (By.XPATH, '//*[@id="product-1"]/td[5]/p')
+    unit_price_second_product = (By.XPATH, '//*[@id="product-2"]/td[3]/p')
+    qty_second_product = (By.XPATH, '//*[@id="product-2"]/td[4]/button')
+    total_price_second_product = (By.XPATH, '//*[@id="product-2"]/td[5]/p')
 
 
 class ViewCart:
@@ -104,4 +116,8 @@ class ViewCart:
     subscription_mail_locator = (By.ID, 'susbscribe_email')
     subscription_button_locator = (By.XPATH, '//*[@id="subscribe"]')
     subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
+    first_product_in_cart_locator = (By.XPATH, '//*[@id="product-1"]/td[2]/h4/a')
+    second_product_in_cart_locator = (By.XPATH, '//*[@id="product-2"]/td[2]/h4/a')
+    first_product_in_cart_basket = (By.XPATH, '//*[@id="product-1"]/td[2]/h4/a')
+    second_product_in_cart_basket = (By.XPATH, '//*[@id="product-2"]/td[2]/h4/a')
 

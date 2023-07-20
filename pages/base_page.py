@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class BasePage:
     def __init__(self, driver, url: str):
@@ -57,8 +60,28 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.accept()
 
-    def scroll_page_down(self):
-        self.driver.execute_script("window.scrollBy(0,8500)","")
+    def scroll_page_down(self, pixels: int):
+        self.driver.execute_script(f"window.scrollBy(0,{pixels})", "")
+
+    def hover_cursor(self, locator: tuple[By, str]):
+        action = ActionChains(self.driver)
+        el = self.driver.find_element(*locator)
+        action.move_to_element(el).perform()
+
+    def wait_and_click(self, locator: tuple[By, str], time: int, page):
+        element = WebDriverWait(self.driver, time).until(EC.element_to_be_clickable(
+            locator))
+        element.click()
+        return page(self.driver, self.driver.current_url)
+
+
+
+
+
+
+
+
+
 
 
 

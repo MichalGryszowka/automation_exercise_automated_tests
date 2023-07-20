@@ -12,7 +12,7 @@ def test_case_10_verify_subscription_cart_page(get_main_page):
 
     view_cart_page = main_page.click_button(locators.Main.cart_button_locator, ViewCart)
 
-    view_cart_page.scroll_page_down()
+    view_cart_page.scroll_page_down(8500)
 
     # Verify text 'SUBSCRIPTION'
     assert view_cart_page.get_text_2(locators.ViewCart.subscription_locator) == "SUBSCRIPTION"
