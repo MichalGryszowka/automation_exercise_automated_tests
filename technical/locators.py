@@ -18,6 +18,7 @@ class Main:
     subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
     cart_button_locator = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a')
     product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
+    view_first_product = (By.XPATH, '/html/body/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/ul/li/a')
 
 
 class Login:
@@ -62,7 +63,7 @@ class Signup:
 
 class AccountCreated:
     account_created_locator = (By.XPATH, '/html/body/section/div/div/div/h2/b')
-    continue_locator = (By.XPATH,'/html/body/section/div/div/div/div/a')
+    continue_locator = (By.XPATH, '/html/body/section/div/div/div/div/a')
 
 
 class DeleteAccount:
@@ -109,6 +110,8 @@ class Products:
     unit_price_second_product = (By.XPATH, '//*[@id="product-2"]/td[3]/p')
     qty_second_product = (By.XPATH, '//*[@id="product-2"]/td[4]/button')
     total_price_second_product = (By.XPATH, '//*[@id="product-2"]/td[5]/p')
+    dynamic_qty_first_product = (By.XPATH, '//*[@id="quantity"]')
+    to_cart_first_product = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button')
 
 
 class ViewCart:
@@ -120,4 +123,8 @@ class ViewCart:
     second_product_in_cart_locator = (By.XPATH, '//*[@id="product-2"]/td[2]/h4/a')
     first_product_in_cart_basket = (By.XPATH, '//*[@id="product-1"]/td[2]/h4/a')
     second_product_in_cart_basket = (By.XPATH, '//*[@id="product-2"]/td[2]/h4/a')
+    delete_x_button_first_product = (By.XPATH, '//*[@id="product-1"]/td[6]/a')
+    delete_x_button_second_product = (By.XPATH, '//*[@id="product-2"]/td[6]/a/i')
+
+
 

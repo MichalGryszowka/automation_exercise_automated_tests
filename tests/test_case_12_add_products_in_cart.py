@@ -1,6 +1,7 @@
 from pages.products_page import ProductsPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
+from time import sleep
 
 
 def test_case_12_add_products_in_cart(get_main_page):
@@ -67,3 +68,13 @@ def test_case_12_add_products_in_cart(get_main_page):
 
     # Verify total price of second product
     assert price_second_product_int * qty_second_product == total_price_second_product_int
+
+    view_cart_page.click_element(locators.ViewCart.delete_x_button_first_product)
+
+    view_cart_page.click_element(locators.ViewCart.delete_x_button_second_product)
+
+    sleep(10)
+
+
+
+
