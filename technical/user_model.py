@@ -21,4 +21,8 @@ class User:
     message: str = '''I can't add one of the product to the basket'''
     screenshot_path: str = 'C:/Users/HP/PycharmProjects/AutomationExercise/files/error_screenshot.png'
     product_name: str = 'Blue Top'
+    card_number: str = '6666 0000 9999 1111'
+    cvc: str = '567'
+    exp_month: str = '12'
+    exp_year: str = '2023'
 

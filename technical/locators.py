@@ -25,7 +25,7 @@ class Login:
     existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
     existing_password = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[3]')
     add_locator = (By.XPATH, '/html/body/ins[2]/div[1]//ins/span/svg/path')
-    login_to_your_account = (By.XPATH, '/html/body/section/div/div/div[1]/div/h2')
+    login_to_your_account = (By.XPATH, '//*[@id="form"]/div/div/div[1]/div/h2')
     new_user_signup_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/h2')
     new_user_name_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/input[2]')
     new_user_email_locator = (By.XPATH, '/html/body/section/div/div/div[3]/div/form/input[3]')
@@ -39,7 +39,7 @@ class Login:
 class Signup:
     enter_account_info_locator = (By.XPATH, '/html/body/section/div/div/div/div/h2/b')
     add_locator = (By.XPATH, '/html/body/div[1]/div/div[2]/svg/path')
-    gender_locator = (By.ID, 'id_gender1')
+    gender_locator = (By.CSS_SELECTOR, '#id_gender1')
     name_locator = (By.ID, 'name')
     email_locator = (By.ID, 'email')
     password_locator = (By.ID, 'password')
@@ -125,6 +125,24 @@ class ViewCart:
     second_product_in_cart_basket = (By.XPATH, '//*[@id="product-2"]/td[2]/h4/a')
     delete_x_button_first_product = (By.XPATH, '//*[@id="product-1"]/td[6]/a')
     delete_x_button_second_product = (By.XPATH, '//*[@id="product-2"]/td[6]/a/i')
+    proceed_to_checkout_btn = (By.XPATH, '//*[@id="do_action"]/div[1]/div/div/a')
+    register_login_button = (By.XPATH, '//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a/u')
 
+
+class Checkout:
+    address_details = (By.XPATH, '//*[@id="cart_items"]/div/div[2]/h2')
+    review_your_order = (By.XPATH, '//*[@id="cart_items"]/div/div[4]/h2')
+    place_order_btn = (By.XPATH, '//*[@id="cart_items"]/div/div[7]/a')
+
+
+class Payment:
+    name_on_card = (By.XPATH, '//*[@id="payment-form"]/div[1]/div/input')
+    card_number = (By.CSS_SELECTOR, '#payment-form > div:nth-child(3) > div > input')
+    cvc = (By.XPATH, '//*[@id="payment-form"]/div[3]/div[1]/input')
+    expiration_month = (By.XPATH, '//*[@id="payment-form"]/div[3]/div[2]/input')
+    expiration_year = (By.XPATH, '//*[@id="payment-form"]/div[3]/div[3]/input')
+    pay_and_confirm_btn = (By.XPATH, '//*[@id="submit"]')
+    your_order_placed = (By.XPATH, '//*[@id="success_message"]/div')
+    delete_my_account = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a')
 
 

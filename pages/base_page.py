@@ -74,6 +74,15 @@ class BasePage:
         element.click()
         return page(self.driver, self.driver.current_url)
 
+    def wait_and_get_text(self, locator: tuple[By, str], time: int):
+        element = WebDriverWait(self.driver, time).until(EC.presence_of_element_located(
+            locator))
+        element.get_text(locator)
+
+    def return_page(self):
+        self.driver.back()
+
+
 
 
 

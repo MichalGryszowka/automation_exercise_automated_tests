@@ -25,7 +25,7 @@ def test_case_2_login_correct(get_main_page):
 
     signup_page = login_page.click_button(locators.Login.signup_button_locator, SignupPage)
 
-    signup_page.get_element(locators.Signup.gender_locator).click()
+    signup_page.wait_and_click(locators.Signup.gender_locator, 2, SignupPage)
 
     signup_page.fill_in_data(locators.Signup.password_locator, User.password)
 
