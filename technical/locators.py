@@ -133,6 +133,7 @@ class Checkout:
     address_details = (By.XPATH, '//*[@id="cart_items"]/div/div[2]/h2')
     review_your_order = (By.XPATH, '//*[@id="cart_items"]/div/div[4]/h2')
     place_order_btn = (By.XPATH, '//*[@id="cart_items"]/div/div[7]/a')
+    comment_box = (By.XPATH, '//*[@id="ordermsg"]/textarea')
 
 
 class Payment:
@@ -143,6 +144,10 @@ class Payment:
     expiration_year = (By.XPATH, '//*[@id="payment-form"]/div[3]/div[3]/input')
     pay_and_confirm_btn = (By.XPATH, '//*[@id="submit"]')
     your_order_placed = (By.XPATH, '//*[@id="success_message"]/div')
+
+
+class PaymentDone:
     delete_my_account = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a')
+
 
 

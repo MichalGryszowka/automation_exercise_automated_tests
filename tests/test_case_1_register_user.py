@@ -28,7 +28,7 @@ def test_case_1_register_user(get_main_page):
     # Verify 'Enter Account Information' is visible
     assert signup_page.check_el_visibility(locators.Signup.enter_account_info_locator) is True
 
-    signup_page.get_element(locators.Signup.gender_locator).click()
+    signup_page.wait_and_click(locators.Signup.gender_locator, 2, SignupPage)
 
     signup_page.fill_in_data(locators.Signup.password_locator, User.password)
 

@@ -12,38 +12,13 @@ from technical import locators
 from technical.user_model import User
 
 
-def test_case_14_place_order_register_with_checkout(get_main_page):
+def test_case_15_register_before_checkout(get_main_page):
     main_page = get_main_page
 
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
 
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
-
-    products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    products_page.scroll_page_down(300)
-
-    products_page.hover_cursor(locators.Products.hover_first_product_locator)
-
-    products_page.click_element(locators.Products.add_to_cart_first_product)
-
-    products_page.wait_and_click(locators.Products.continue_shopping_button_locator, 2, ProductsPage)
-
-    products_page.hover_cursor(locators.Products.hover_second_product_locator)
-
-    products_page.click_element(locators.Products.add_to_cart_second_product)
-
-    view_cart_page = products_page.wait_and_click(locators.Products.view_cart_locator, 2, ViewCartPage)
-
-    # Verify cart page is displayed
-    assert view_cart_page.get_url() == 'https://automationexercise.com/view_cart'
-
-    view_cart_page.click_element(locators.ViewCart.proceed_to_checkout_btn)
-
-    login_page = view_cart_page.wait_and_click(locators.ViewCart.register_login_button, 2, LoginPage)
+    login_page = main_page.click_button(locators.Main.login_locator, LoginPage)
 
     login_page.fill_in_data(locators.Login.new_user_name_locator, User.name)
 
@@ -98,13 +73,36 @@ def test_case_14_place_order_register_with_checkout(get_main_page):
     # Verify 'Logged in as username' is visible
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
 
-    view_cart_page = main_page.click_button(locators.Main.cart_button_locator, ViewCartPage)
+    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
+
+    main_page.switch_to_default_and_refresh()
+
+    products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
+
+    products_page.scroll_page_down(300)
+
+    products_page.hover_cursor(locators.Products.hover_first_product_locator)
+
+    products_page.click_element(locators.Products.add_to_cart_first_product)
+
+    products_page.wait_and_click(locators.Products.continue_shopping_button_locator, 2, ProductsPage)
+
+    products_page.hover_cursor(locators.Products.hover_second_product_locator)
+
+    products_page.click_element(locators.Products.add_to_cart_second_product)
+
+    view_cart_page = products_page.wait_and_click(locators.Products.view_cart_locator, 2, ViewCartPage)
+
+    # Verify cart page is displayed
+    assert view_cart_page.get_url() == 'https://automationexercise.com/view_cart'
 
     checkout_page = view_cart_page.click_button(locators.ViewCart.proceed_to_checkout_btn, CheckoutPage)
 
     assert checkout_page.check_el_visibility(locators.Checkout.address_details) is True
 
     assert checkout_page.check_el_visibility(locators.Checkout.review_your_order) is True
+
+    checkout_page.fill_in_data(locators.Checkout.comment_box, User.comment)
 
     payment_page = checkout_page.click_button(locators.Checkout.place_order_btn, PaymentPage)
 
