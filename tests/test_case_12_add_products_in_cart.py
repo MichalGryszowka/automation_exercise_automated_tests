@@ -1,7 +1,7 @@
+from time import sleep
 from pages.products_page import ProductsPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
-from time import sleep
 
 
 def test_case_12_add_products_in_cart(get_main_page):

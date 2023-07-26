@@ -10,9 +10,7 @@ def test_case_13_verify_product_quantity_in_cart(get_main_page):
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
 
-    main_page.click_button(locators.Main.view_first_product, ProductsDetails1Page)
-
-    main_page.switch_to_default_and_refresh()
+    main_page.scroll_page_down(100)
 
     product_1_details = main_page.click_button(locators.Main.view_first_product, ProductsDetails1Page)
 

@@ -18,7 +18,7 @@ class Main:
     subscription_success_msg = (By.XPATH, '//*[@id="success-subscribe"]/div')
     cart_button_locator = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a')
     product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
-    view_first_product = (By.XPATH, '/html/body/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div/div[2]/ul/li/a')
+    view_first_product = (By.XPATH, '/html/body/section[2]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[2]/ul/li/a')
 
 
 class Login:
@@ -37,7 +37,7 @@ class Login:
 
 
 class Signup:
-    enter_account_info_locator = (By.XPATH, '/html/body/section/div/div/div/div/h2/b')
+    enter_account_info_locator = (By.CSS_SELECTOR, '#form > div > div > div > div.login-form > h2 > b')
     add_locator = (By.XPATH, '/html/body/div[1]/div/div[2]/svg/path')
     gender_locator = (By.CSS_SELECTOR, '#id_gender1')
     name_locator = (By.ID, 'name')

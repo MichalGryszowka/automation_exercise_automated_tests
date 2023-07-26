@@ -10,9 +10,10 @@ from pages.signup_page import SignupPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
 from technical.user_model import User
+from time import sleep
 
+def test_case_16_login_before_checkout(get_main_page):
 
-def test_case_15_register_before_checkout(get_main_page):
     main_page = get_main_page
 
     # Verify that home page is visible successfully
@@ -20,11 +21,17 @@ def test_case_15_register_before_checkout(get_main_page):
 
     login_page = main_page.click_button(locators.Main.login_locator, LoginPage)
 
+    # Verify 'New User Signup!' is visible
+    assert login_page.get_text(locators.Login.new_user_signup_locator) == 'New User Signup!'
+
     login_page.fill_in_data(locators.Login.new_user_name_locator, User.name)
 
     login_page.fill_in_data(locators.Login.new_user_email_locator, User.email)
 
     signup_page = main_page.click_button(locators.Login.signup_button_locator, SignupPage)
+
+    # Verify 'Enter Account Information' is visible
+    assert signup_page.check_el_visibility(locators.Signup.enter_account_info_locator) is True
 
     signup_page.wait_and_click(locators.Signup.gender_locator, 2, SignupPage)
 
@@ -62,6 +69,7 @@ def test_case_15_register_before_checkout(get_main_page):
 
     account_created_page = signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
 
+    # Verify that "Account Created!" message is present
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
 
     account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
@@ -69,6 +77,16 @@ def test_case_15_register_before_checkout(get_main_page):
     account_created_page.switch_to_default_and_refresh()
 
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
+
+    main_page.click_button(locators.Main.logout_button, MainPage)
+
+    login_page = main_page.click_button(locators.Main.login_locator, LoginPage)
+
+    login_page.fill_in_data(locators.Login.existing_email, User.email)
+
+    login_page.fill_in_data(locators.Login.existing_password, User.password)
+
+    main_page = login_page.click_button(locators.Login.login_button_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
@@ -98,16 +116,18 @@ def test_case_15_register_before_checkout(get_main_page):
 
     checkout_page = view_cart_page.click_button(locators.ViewCart.proceed_to_checkout_btn, CheckoutPage)
 
+    # Verify address is displayed
     assert checkout_page.check_el_visibility(locators.Checkout.address_details) is True
 
+    # Verify review your order is displayed
     assert checkout_page.check_el_visibility(locators.Checkout.review_your_order) is True
 
     checkout_page.fill_in_data(locators.Checkout.comment_box, User.comment)
-
+    # sleep(1)
     payment_page = checkout_page.click_button(locators.Checkout.place_order_btn, PaymentPage)
-
+    # sleep(1)
     payment_page.fill_in_data(locators.Payment.name_on_card, User.name)
-
+    # sleep(1)
     payment_page.fill_in_data(locators.Payment.card_number, User.card_number)
 
     payment_page.fill_in_data(locators.Payment.cvc, User.cvc)
@@ -131,3 +151,4 @@ def test_case_15_register_before_checkout(get_main_page):
     assert delete_account_page.get_text_2(locators.DeleteAccount.account_deleted_locator) == 'ACCOUNT DELETED!'
 
     delete_account_page.click_button(locators.DeleteAccount.continue_button_locator, MainPage)
+
