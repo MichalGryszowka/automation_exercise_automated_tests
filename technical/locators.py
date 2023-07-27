@@ -127,6 +127,7 @@ class ViewCart:
     delete_x_button_second_product = (By.XPATH, '//*[@id="product-2"]/td[6]/a/i')
     proceed_to_checkout_btn = (By.XPATH, '//*[@id="do_action"]/div[1]/div/div/a')
     register_login_button = (By.XPATH, '//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a/u')
+    cart_is_empty_msg = (By.CSS_SELECTOR, '#empty_cart > p > b')
 
 
 class Checkout:

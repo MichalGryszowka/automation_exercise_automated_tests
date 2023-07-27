@@ -10,7 +10,7 @@ from pages.signup_page import SignupPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
 from technical.user_model import User
-from time import sleep
+
 
 def test_case_16_login_before_checkout(get_main_page):
 
