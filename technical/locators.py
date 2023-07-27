@@ -19,6 +19,9 @@ class Main:
     cart_button_locator = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a')
     product_button_locator = (By.XPATH, '/html/body/header/div/div/div/div[2]/div/ul/li[2]/a')
     view_first_product = (By.XPATH, '/html/body/section[2]/div[1]/div/div[2]/div[1]/div[2]/div[1]/div[2]/ul/li/a')
+    category_products = (By.XPATH, '/html/body/section[2]/div/div/div[1]/div/h2')
+    woman_category = (By.CSS_SELECTOR, '#accordian > div:nth-child(1) > div.panel-heading > h4 > a > span > i')
+    woman_category_dress = (By.CSS_SELECTOR, '#Women > div > ul > li:nth-child(1) > a')
 
 
 class Login:
@@ -150,5 +153,14 @@ class Payment:
 class PaymentDone:
     delete_my_account = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a')
 
+
+class CategoryProducts1:
+    dress_products_title = (By.XPATH, '/html/body/section/div/div[2]/div[2]/div/h2')
+    man_category = (By.CSS_SELECTOR , '#accordian > div:nth-child(2) > div.panel-heading > h4 > a > span > i')
+    man_category_tshirts = (By.CSS_SELECTOR, '#Men > div > ul > li:nth-child(1) > a')
+
+
+class CategoryProducts3:
+    tshirts_products_title = (By.XPATH, '/html/body/section/div/div[2]/div[2]/div/h2')
 
 
