@@ -1,4 +1,3 @@
-from time import sleep
 from pages.products_page import ProductsPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
@@ -10,10 +9,6 @@ def test_case_12_add_products_in_cart(get_main_page):
 
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
-
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
 
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 
@@ -72,8 +67,6 @@ def test_case_12_add_products_in_cart(get_main_page):
     view_cart_page.click_element(locators.ViewCart.delete_x_button_first_product)
 
     view_cart_page.click_element(locators.ViewCart.delete_x_button_second_product)
-
-    sleep(10)
 
 
 

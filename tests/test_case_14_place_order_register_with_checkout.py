@@ -18,10 +18,6 @@ def test_case_14_place_order_register_with_checkout(get_main_page):
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
 
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
-
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 
     products_page.scroll_page_down(300)
@@ -89,10 +85,6 @@ def test_case_14_place_order_register_with_checkout(get_main_page):
 
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
 
-    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
-
-    account_created_page.switch_to_default_and_refresh()
-
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
@@ -127,7 +119,7 @@ def test_case_14_place_order_register_with_checkout(get_main_page):
 
     payment_done = payment_page.click_button(locators.Payment.pay_and_confirm_btn, PaymentDonePage)
 
-    delete_account_page = payment_page.click_button(locators.PaymentDone.delete_my_account, DeleteAccountPage)
+    delete_account_page = payment_done.click_button(locators.PaymentDone.delete_my_account, DeleteAccountPage)
 
     # Verify 'Account deleted' message
     assert delete_account_page.get_text_2(locators.DeleteAccount.account_deleted_locator) == 'ACCOUNT DELETED!'

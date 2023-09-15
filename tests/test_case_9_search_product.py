@@ -1,7 +1,7 @@
 from pages.products_page import ProductsPage
 from technical import locators
 from technical.user_model import User
-
+from time import sleep
 
 def test_case_9_search_product(get_main_page):
 
@@ -9,10 +9,6 @@ def test_case_9_search_product(get_main_page):
 
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
-
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
 
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 

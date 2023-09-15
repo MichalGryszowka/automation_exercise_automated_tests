@@ -64,18 +64,10 @@ def test_case_15_register_before_checkout(get_main_page):
 
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
 
-    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
-
-    account_created_page.switch_to_default_and_refresh()
-
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     # Verify 'Logged in as username' is visible
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
-
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
 
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 

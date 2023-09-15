@@ -72,10 +72,6 @@ def test_case_16_login_before_checkout(get_main_page):
     # Verify that "Account Created!" message is present
     assert account_created_page.get_text(locators.AccountCreated.account_created_locator) == 'Account Created!'
 
-    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
-
-    account_created_page.switch_to_default_and_refresh()
-
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     main_page.click_button(locators.Main.logout_button, MainPage)
@@ -90,10 +86,6 @@ def test_case_16_login_before_checkout(get_main_page):
 
     # Verify 'Logged in as username' is visible
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
-
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
 
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 
@@ -123,11 +115,11 @@ def test_case_16_login_before_checkout(get_main_page):
     assert checkout_page.check_el_visibility(locators.Checkout.review_your_order) is True
 
     checkout_page.fill_in_data(locators.Checkout.comment_box, User.comment)
-    # sleep(1)
+
     payment_page = checkout_page.click_button(locators.Checkout.place_order_btn, PaymentPage)
-    # sleep(1)
+
     payment_page.fill_in_data(locators.Payment.name_on_card, User.name)
-    # sleep(1)
+
     payment_page.fill_in_data(locators.Payment.card_number, User.card_number)
 
     payment_page.fill_in_data(locators.Payment.cvc, User.cvc)

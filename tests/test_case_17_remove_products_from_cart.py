@@ -10,10 +10,6 @@ def test_case_17_remove_products_from_cart(get_main_page):
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.main_slider_locator) is True
 
-    main_page.click_button(locators.Main.product_button_locator, ProductsPage)
-
-    main_page.switch_to_default_and_refresh()
-
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 
     products_page.scroll_page_down(300)

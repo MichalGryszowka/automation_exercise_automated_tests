@@ -22,7 +22,10 @@ class Main:
     category_products = (By.XPATH, '/html/body/section[2]/div/div/div[1]/div/h2')
     woman_category = (By.CSS_SELECTOR, '#accordian > div:nth-child(1) > div.panel-heading > h4 > a > span > i')
     woman_category_dress = (By.CSS_SELECTOR, '#Women > div > ul > li:nth-child(1) > a')
-
+    dress_products_title = (By.XPATH, '/html/body/section/div/div[2]/div[2]/div/h2')
+    man_category = (By.CSS_SELECTOR , '#accordian > div:nth-child(2) > div.panel-heading > h4 > a > span > i')
+    tshirts_products_title = (By.CSS_SELECTOR,
+                              'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')
 
 class Login:
     existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
@@ -115,7 +118,10 @@ class Products:
     total_price_second_product = (By.XPATH, '//*[@id="product-2"]/td[5]/p')
     dynamic_qty_first_product = (By.XPATH, '//*[@id="quantity"]')
     to_cart_first_product = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button')
-
+    brands_header = (By.CSS_SELECTOR, 'body > section:nth-child(4) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > h2')
+    HM_brand = (By.CSS_SELECTOR, 'body > section:nth-child(4) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > div > ul > li:nth-child(2) > a')
+    summer_top = (By.CSS_SELECTOR,
+                  'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(4) > div > div.single-products > div.product-overlay > div > p')
 
 class ViewCart:
     subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
@@ -158,9 +164,18 @@ class CategoryProducts1:
     dress_products_title = (By.XPATH, '/html/body/section/div/div[2]/div[2]/div/h2')
     man_category = (By.CSS_SELECTOR , '#accordian > div:nth-child(2) > div.panel-heading > h4 > a > span > i')
     man_category_tshirts = (By.CSS_SELECTOR, '#Men > div > ul > li:nth-child(1) > a')
+    category_products = (By.XPATH, '/html/body/section[2]/div/div/div[1]/div/h2')
+    woman_category_dress = (By.CSS_SELECTOR, '#Women > div > ul > li:nth-child(1) > a')
 
 
 class CategoryProducts3:
-    tshirts_products_title = (By.XPATH, '/html/body/section/div/div[2]/div[2]/div/h2')
+    tshirts_products_title = (By.CSS_SELECTOR, 'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')
 
 
+class HMProductsPage:
+    summer_top = (By.CSS_SELECTOR, 'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(4) > div > div.single-products > div.product-overlay > div > p')
+    polo_brand = (By.CSS_SELECTOR, 'body > section > div > div.row > div.col-sm-3 > div > div.brands_products > div > ul > li:nth-child(1) > a')
+
+
+class PoloProductsPage:
+    summer_top = (By.CSS_SELECTOR,'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')

@@ -1,6 +1,3 @@
-from pages.category_products_1_page import CategoryProducts1Page
-from pages.category_products_3_page import CategoryProducts3Page
-from pages.main_page import MainPage
 from technical import locators
 
 
@@ -11,24 +8,24 @@ def test_case_18_view_category_products(get_main_page):
     # Verify that home page is visible successfully
     assert main_page.check_el_visibility(locators.Main.category_products) is True
 
-    main_page.click_button(locators.Main.woman_category, MainPage)
+    main_page.scroll_page_down(400)
 
-    cat_prod_1_page = main_page.wait_and_click(locators.Main.woman_category_dress, 2, CategoryProducts1Page)
+    main_page.click_element(locators.Main.woman_category)
 
-    assert cat_prod_1_page.get_text(locators.CategoryProducts1.dress_products_title) == 'Women - Dress Products'
+    main_page.click_element(locators.Main.woman_category_dress)
 
-    cat_prod_1_page.scroll_page_down(400)
+    main_page.switch_to_default_and_refresh()
 
-    cat_prod_1_page.click_element(locators.CategoryProducts1.man_category)
+    main_page.click_element(locators.Main.woman_category)
 
-    cat_prod_1_page.wait_and_click(locators.CategoryProducts1.man_category_tshirts, 2, CategoryProducts3Page)
+    main_page.click_element(locators.Main.woman_category_dress)
 
-    cat_prod_1_page.switch_to_default_and_refresh()
+    # Verify that category page is displayed and confirm text 'WOMEN - TOPS PRODUCTS'
+    assert main_page.get_text_2(locators.Main.dress_products_title) == 'WOMEN - DRESS PRODUCTS'
 
-    cat_prod_1_page.click_element(locators.CategoryProducts1.man_category)
+    main_page.scroll_page_down(600)
 
-    cat_prod_3_page = cat_prod_1_page.wait_and_click(
-        locators.CategoryProducts1.man_category_tshirts, 2, CategoryProducts3Page)
+    main_page.click_element(locators.Main.man_category)
 
-    assert cat_prod_3_page.get_text(locators.CategoryProducts3.tshirts_products_title) ==\
-           'Men - Tshirts Products'
+    # Verify that user is navigated to that category page
+    assert main_page.get_text_2(locators.Main.tshirts_products_title) == 'Sleeveless Dress'

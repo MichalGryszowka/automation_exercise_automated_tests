@@ -61,10 +61,6 @@ def test_case_2_login_correct(get_main_page):
 
     account_created_page = signup_page.click_button(locators.Signup.create_account_button, AccountCreatedPage)
 
-    account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
-
-    account_created_page.switch_to_default_and_refresh()
-
     main_page = account_created_page.click_button(locators.AccountCreated.continue_locator, MainPage)
 
     login_page = main_page.click_button(locators.Main.login_locator, LoginPage)
@@ -78,9 +74,7 @@ def test_case_2_login_correct(get_main_page):
     # Verify 'Logged in as username' is visible
     assert main_page.get_text(locators.Main.logged_on_user) == 'Tomasz'
 
-    account_deleted_page = main_page.click_button(locators.Main.delete_account, DeleteAccountPage)
-
-    account_deleted_page.switch_to_default_and_refresh()
+    main_page.click_button(locators.Main.delete_account, DeleteAccountPage)
 
     # Verify 'Account Deleted' is visible
     assert main_page.get_text(locators.DeleteAccount.account_deleted_locator) == 'Account Deleted!'

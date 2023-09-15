@@ -1,5 +1,4 @@
 from pages.main_page import MainPage
-from pages.products_page import ProductsPage
 from technical import locators
 from technical.user_model import User
 
