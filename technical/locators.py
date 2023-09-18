@@ -131,7 +131,6 @@ class Products:
     view_product_blue_top = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.choose > ul > li > a')
 
 
-
 class ViewCart:
     subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
     subscription_mail_locator = (By.ID, 'susbscribe_email')
@@ -155,6 +154,7 @@ class Checkout:
     review_your_order = (By.XPATH, '//*[@id="cart_items"]/div/div[4]/h2')
     place_order_btn = (By.XPATH, '//*[@id="cart_items"]/div/div[7]/a')
     comment_box = (By.XPATH, '//*[@id="ordermsg"]/textarea')
+    delete_account = (By.CSS_SELECTOR, '#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(5) > a')
 
 
 class Payment:
