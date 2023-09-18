@@ -26,6 +26,10 @@ class Main:
     man_category = (By.CSS_SELECTOR , '#accordian > div:nth-child(2) > div.panel-heading > h4 > a > span > i')
     tshirts_products_title = (By.CSS_SELECTOR,
                               'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')
+    recommended_items = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div > div > div.col-sm-9.padding-right > div.recommended_items > h2')
+    add_to_cart_stylish_dress = (By. CSS_SELECTOR, '#recommended-item-carousel > div > div.item.active > div:nth-child(1) > div > div > div > a')
+    view_cart_blue_top = (By. CSS_SELECTOR, '#cartModal > div > div > div.modal-body > p:nth-child(2) > a > u')
+
 
 
 class Login:
@@ -127,6 +131,7 @@ class Products:
     view_product_blue_top = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.choose > ul > li > a')
 
 
+
 class ViewCart:
     subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
     subscription_mail_locator = (By.ID, 'susbscribe_email')
@@ -142,6 +147,7 @@ class ViewCart:
     register_login_button = (By.XPATH, '//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a/u')
     signup_login = (By.CSS_SELECTOR, '#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a')
     cart_is_empty_msg = (By.CSS_SELECTOR, '#empty_cart > p > b')
+    view_stylish_dress_in_basket = (By.CSS_SELECTOR, '#product-4 > td.cart_description > h4 > a')
 
 
 class Checkout:
