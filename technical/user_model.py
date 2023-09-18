@@ -26,3 +26,4 @@ class User:
     exp_month: str = '12'
     exp_year: str = '2023'
     comment: str = '''Please send me ordered items ASAP!'''
+    review: str = 'This product is great!'

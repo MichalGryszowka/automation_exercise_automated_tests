@@ -124,6 +124,7 @@ class Products:
     HM_brand = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > div > ul > li:nth-child(2) > a')
     summer_top = (By.CSS_SELECTOR,
                   'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(4) > div > div.single-products > div.product-overlay > div > p')
+    view_product_blue_top = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.choose > ul > li > a')
 
 
 class ViewCart:
@@ -183,3 +184,12 @@ class HMProductsPage:
 
 class PoloProductsPage:
     summer_top = (By.CSS_SELECTOR,'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')
+
+
+class ProductsDetail1:
+    write_your_review = (By.CSS_SELECTOR, 'body > section > div > div > div.col-sm-9.padding-right > div.category-tab.shop-details-tab > div.col-sm-12 > ul > li > a')
+    your_name = (By. CSS_SELECTOR, '#name')
+    email = (By. CSS_SELECTOR, '#email')
+    review = (By.CSS_SELECTOR, '#review')
+    submit = (By. ID, 'button-review')
+    thank_you_msg = (By. CSS_SELECTOR, '#review-section > div > div > span')

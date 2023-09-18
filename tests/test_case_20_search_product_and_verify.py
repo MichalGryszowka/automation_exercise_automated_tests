@@ -1,21 +1,19 @@
-from pages.hm_product_page import HMProductPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
-from pages.polo_product_page import PoloProductPage
 from pages.products_page import ProductsPage
 from pages.view_cart_page import ViewCartPage
 from technical import locators
-from time import sleep
 
 from technical.user_model import User
 
 
-def test_case_19_view_cart_brand_products(get_main_page):
+def test_case_20_search_product_and_verify(get_main_page):
 
     main_page = get_main_page
 
     products_page = main_page.click_button(locators.Main.product_button_locator, ProductsPage)
 
+    # Verify user is navigated to ALL PRODUCTS page successfully
     assert products_page.get_url() == 'https://automationexercise.com/products'
 
     products_page.scroll_page_down(300)
@@ -24,6 +22,7 @@ def test_case_19_view_cart_brand_products(get_main_page):
 
     products_page.click_button(locators.Products.loop_locator, ProductsPage)
 
+    # Verify 'SEARCHED PRODUCTS' is visible
     assert products_page.check_el_visibility(locators.Products.search_product_locator) is True
 
     products_page.hover_cursor(locators.Products.hover_first_product_locator)

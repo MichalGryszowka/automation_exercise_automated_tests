@@ -56,7 +56,6 @@ class BasePage:
             locator))
         element.get_text_2(locator)
 
-
     def check_el_visibility(self, locator: tuple[By, str]):
         return self.driver.find_element(*locator).is_displayed()
 
