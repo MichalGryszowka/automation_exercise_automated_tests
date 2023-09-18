@@ -3,7 +3,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
-
+import os.path
+import time
 
 class BasePage:
     def __init__(self, driver, url: str):
@@ -90,6 +91,12 @@ class BasePage:
 
     def return_page(self):
         self.driver.back()
+
+    def check_file_download(self, path: str):
+        while not os.path.exists(path):
+            time.sleep(1)
+        if os.path.isfile(path):
+            return True
 
 
 

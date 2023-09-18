@@ -169,6 +169,8 @@ class Payment:
 
 class PaymentDone:
     delete_my_account = (By.XPATH, '//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a')
+    download_invoice = (By.CSS_SELECTOR, '#form > div > div > div > a')
+    continue_btn = (By.CSS_SELECTOR, '#form > div > div > div > div > a')
 
 
 class CategoryProducts1:
