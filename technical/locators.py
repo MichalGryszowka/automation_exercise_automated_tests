@@ -27,6 +27,7 @@ class Main:
     tshirts_products_title = (By.CSS_SELECTOR,
                               'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.single-products > div.product-overlay > div > p')
 
+
 class Login:
     existing_email = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[2]')
     existing_password = (By.XPATH, '/html/body/section/div/div/div[1]/div/form/input[3]')
@@ -119,9 +120,11 @@ class Products:
     dynamic_qty_first_product = (By.XPATH, '//*[@id="quantity"]')
     to_cart_first_product = (By.XPATH, '/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button')
     brands_header = (By.CSS_SELECTOR, 'body > section:nth-child(4) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > h2')
-    HM_brand = (By.CSS_SELECTOR, 'body > section:nth-child(4) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > div > ul > li:nth-child(2) > a')
+    brands_header_2 = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > h2')
+    HM_brand = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-3 > div.left-sidebar > div.brands_products > div > ul > li:nth-child(2) > a')
     summer_top = (By.CSS_SELECTOR,
                   'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(4) > div > div.single-products > div.product-overlay > div > p')
+
 
 class ViewCart:
     subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
@@ -136,6 +139,7 @@ class ViewCart:
     delete_x_button_second_product = (By.XPATH, '//*[@id="product-2"]/td[6]/a/i')
     proceed_to_checkout_btn = (By.XPATH, '//*[@id="do_action"]/div[1]/div/div/a')
     register_login_button = (By.XPATH, '//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a/u')
+    signup_login = (By.CSS_SELECTOR, '#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a')
     cart_is_empty_msg = (By.CSS_SELECTOR, '#empty_cart > p > b')
 
 

@@ -23,8 +23,6 @@ def test_case_18_view_category_products(get_main_page):
     # Verify that category page is displayed and confirm text 'WOMEN - TOPS PRODUCTS'
     assert main_page.get_text_2(locators.Main.dress_products_title) == 'WOMEN - DRESS PRODUCTS'
 
-    main_page.scroll_page_down(600)
-
     main_page.click_element(locators.Main.man_category)
 
     # Verify that user is navigated to that category page

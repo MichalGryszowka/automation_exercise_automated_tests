@@ -51,6 +51,12 @@ class BasePage:
             locator))
         element.get_text(locator)
 
+    def wait_and_get_text_2(self, locator: tuple[By, str], time: int):
+        element = WebDriverWait(self.driver, time).until(EC.presence_of_element_located(
+            locator))
+        element.get_text_2(locator)
+
+
     def check_el_visibility(self, locator: tuple[By, str]):
         return self.driver.find_element(*locator).is_displayed()
 
