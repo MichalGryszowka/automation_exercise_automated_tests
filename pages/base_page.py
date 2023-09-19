@@ -98,6 +98,10 @@ class BasePage:
         if os.path.isfile(path):
             return True
 
+    def scroll_page_bottom(self, pixels):
+        self.driver.execute_script(f"window.scrollBy(0, {pixels})")
+
+
 
 
 

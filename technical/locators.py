@@ -129,7 +129,9 @@ class Products:
     summer_top = (By.CSS_SELECTOR,
                   'body > section > div > div.row > div.col-sm-9.padding-right > div > div:nth-child(4) > div > div.single-products > div.product-overlay > div > p')
     view_product_blue_top = (By.CSS_SELECTOR, 'body > section:nth-child(3) > div.container > div > div.col-sm-9.padding-right > div > div:nth-child(3) > div > div.choose > ul > li > a')
-
+    subscription_locator = (By.CSS_SELECTOR, '#footer > div.footer-widget > div > div > div.col-sm-3.col-sm-offset-1 > div > h2')
+    arrow_up = (By.CSS_SELECTOR, '#scrollUp > i')
+    automation_excercise_frame = (By.CSS_SELECTOR, '#header > div > div > div > div.col-sm-4 > div > a > img')
 
 class ViewCart:
     subscription_locator = (By.CSS_SELECTOR, 'div.single-widget > h2')
